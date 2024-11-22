@@ -3,12 +3,12 @@
 function salvarUsuario($conexao, $nome, $email, $senha, $id=null) {
     if($id) {
         if(!empty($senha)) {
-            $sql = "UPDATE SET nome =?, email =?, senha =?, WHERE id = ?";
+            $sql = "UPDATE usuario SET nome = ?, email = ?, senha = ? WHERE id = ?";
             $stmt = $conexao->prepare($sql);
             $stmt->bind_param("sssi", $nome, $email, $senha, $id);
 
         } else {
-            $sql = "UPDATE SET nome =?, email =?, WHERE id = ?";
+            $sql = "UPDATE usuario SET nome = ?, email = ? WHERE id = ?";
             $stmt = $conexao->prepare($sql);
             $stmt->bind_param("ssi", $nome, $email, $id);
 
@@ -32,7 +32,7 @@ function excluirUsuario($conexao, $id) {
 }
 
 function getUsuario($conexao, $id) {
-    $sql = "SELECT FROM usuario WHERE id = ?";
+    $sql = "SELECT * FROM usuario WHERE id = ?";
     $stmt = $conexao->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();
