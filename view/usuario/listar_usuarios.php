@@ -26,14 +26,13 @@
             
                 while($row= $res->fetch_object()) {
                     print "<tr>";
-                    print "<td> .$row->id . </td>";
-                    print "<td> .$row->Nome . </td>";
-                    print "<td> .$row->Email . </td>";
-                    print "<td> .$row->Ações . </td>";
+                    print "<td>" .$row->id . "</td>";
+                    print "<td>" .$row->nome . "</td>";
+                    print "<td>" .$row->email . "</td>";
                     print "<td>";
-                    print "<button onclick=\"location.href='?page=visualizar&id=" . $row->id . "';\" class='btn btn-info'>Visualizar</button> ";
-                    print "<button onclick=\"location.href='?page=editar&id=" . $row->id . "';\" class='btn btn-warning'>Editar</button> ";
-                    print "<button onclick=\"if(confirm('Tem certeza que deseja excluir este usuário?')){location.href='?page=excluir&id=" . $row->id . "';}\" class='btn btn-danger'>Excluir</button>";
+                    print "<button onclick=\"location.href='?page=visualizar&id=" .$row->id . "';\" class='btn btn-info'>Visualizar</button> ";
+                    print "<button onclick=\"location.href='?page=editar&id=" .$row->id . "';\" class='btn btn-warning'>Editar</button> ";
+                    print "<button onclick=\"if(confirm('Tem certeza que deseja excluir este usuário?')){location.href='?page=excluir&id=" .$row->id . "';}\" class='btn btn-danger'>Excluir</button>";
 
                 }
 
