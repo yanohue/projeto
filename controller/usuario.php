@@ -6,18 +6,18 @@ include ("../view/template.php");
 
 switch (@$_REQUEST["page"]) {
     case "novo":
-        include ("../view/cadastrar_usuario.php");
+        include ("../view/usuario/cadastrar_usuario.php");
         break;
 
     case "listar":
-        include ("../view/listar_usuarios.php");
+        include ("../view/usuario/listar_usuarios.php");
         break;
 
     case "visualizar":
         $id = intval($_REQUEST['id']);
         $usuario = getUsuario($conexao, $id);
 
-        include ("../view/visualizar_usuario.php");
+        include ("../view/usuario/visualizar_usuario.php");
         break;
 
     case "salvar":
@@ -27,10 +27,10 @@ switch (@$_REQUEST["page"]) {
         $id = isset($_POST['id']) && !empty($_POST['id']) ? intval($_POST['id']): null;
 
         if(salvarUsuario($conexao, $nome, $email, $senha, $id)) {
-            echo "<script>alert('Usuário" . ($id ? "atualizado" : "cadastrado") . " com sucesso');</script>";
+            echo "<script>alert('Usuário " . ($id ? "atualizado" : "cadastrado") . " com sucesso');</script>";
 
         } else {
-            echo "<script>alert('Não foi possível" . ($id ? "atualizar" : "cadastrar") . " o usuário');</script>";
+            echo "<script>alert('Não foi possível " . ($id ? "atualizar" : "cadastrar") . " o usuário');</script>";
 
         }
         
@@ -41,7 +41,7 @@ switch (@$_REQUEST["page"]) {
         $id = intval($_REQUEST['id']);
         $usuario = getUsuario($conexao, $id);
 
-        include ("../view/editar_usuario.php");
+        include ("../view/usuario/editar_usuario.php");
         break;
 
     case "excluir":
