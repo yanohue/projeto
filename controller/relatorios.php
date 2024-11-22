@@ -34,9 +34,9 @@ switch (@$_REQUEST["page"]) {
                 END AS segment,
                 COUNT(*) AS client_count
             FROM (
-                SELECT cliente_id, COUNT(*) AS purchase_count
-                FROM vendas
-                GROUP BY cliente_id
+                SELECT id_cliente, COUNT(*) AS purchase_count
+                FROM venda
+                GROUP BY id_cliente
             ) AS purchases
             GROUP BY segment;
         ";
@@ -53,10 +53,10 @@ switch (@$_REQUEST["page"]) {
                     WHEN TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE()) BETWEEN 25 AND 34 THEN '25-34'
                     WHEN TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE()) BETWEEN 35 AND 44 THEN '35-44'
                     ELSE '45+'
-                END AS age_group,
+                END AS segment,
                 COUNT(*) AS client_count
             FROM cliente
-            GROUP BY age_group;
+            GROUP BY segment;
         ";
 
         $segments = fetchClientSegments($conexao, $sql);
@@ -74,8 +74,8 @@ switch (@$_REQUEST["page"]) {
                 COUNT(*) AS client_count
             FROM (
                 SELECT id_cliente, SUM(valor) AS total_spent
-                FROM vendas
-                GROUP BY cliente_id
+                FROM venda
+                GROUP BY id_cliente
             ) AS spending
             GROUP BY segment;
         ";
