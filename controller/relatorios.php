@@ -1,8 +1,13 @@
 <?php
 include("../model/banco.php");
 include("../model/model_cliente.php");
+include ("../view/template.php");
 
 switch (@$_REQUEST["page"]) {
+    case "builder":
+        include("../view/relatorios/relatorio_clientes.php");
+        break;
+
     case "by_activity":
         $sql = "
             SELECT 
