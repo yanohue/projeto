@@ -1,0 +1,34 @@
+Por favor baixar a extensão do VSCode Todo Tree do autor Gruntfuggly
+Com ela você irá visualizar as tarefas marcadas no formato de um comentário => TODO: tarefa
+Na barra lateral têm um ícone de árvore, ali você poderá visualizar todas as tarefas marcadas 
+Você pode clicar numa tarefa para ser direcionado diretamente para o arquivo e linha da tarefa marcada
+Geralmente o comentário terá uma breve descrição do que deve ser feito
+
+
+
+TODO:
+Vamos ter um modelo que divide nossos clientes por idade, este relatório terá:
+- Média de frequência de compras
+- Média gasta por compra
+- Média de pontuação
+- Média de limite de crédito
+- Canal de contato preferido mais comum
+- Média total gasta por cliente
+- Total gasto por faixa etária
+- Categoria de produto mais comprada
+
+Outro poderia ser um modelo que segmenta os clientes por endereço (talvez por bairro), e o relatório teria:
+- Média de frequência de compras
+- Média gasta por compra
+- Média de pontuação
+- Média de limite de crédito
+- Média total gasta por cliente
+- Total gasto por endereço (talvez bairro)
+- Categoria de produto mais comprada
+
+Outro seria um modelo sobre retenção de clientes, poderíamos dividir os clientes pelo tempo desde a primeira compra, e este relatório poderia ter:
+- Categoria de produto mais comprada
+- Média de número de chamadas de feedback
+- Média gasta por compra
+- Média de pontuação
+- Média de limite de crédito
