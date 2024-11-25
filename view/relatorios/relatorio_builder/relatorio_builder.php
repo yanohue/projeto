@@ -6,9 +6,9 @@
     <div class="row">
         <?php
         $templates = [
-            ['id' => 'age', 'title' => 'Cliente por Faixa Etária', 'description' => 'Analise o comportamento do cliente com base em faixas etárias.'],
-            ['id' => 'address', 'title' => 'Clientes por Bairro', 'description' => 'Avalie a atividade do cliente por localização.'],
-            ['id' => 'retention', 'title' => 'Clientes por Retenção', 'description' => 'Entenda o que retêm seu cliente após a primeira compra.'],
+            ['id' => 'idade', 'title' => 'Cliente por Faixa Etária', 'description' => 'Analise o comportamento do cliente com base em faixas etárias.'],
+            ['id' => 'endereço', 'title' => 'Clientes por Bairro', 'description' => 'Avalie a atividade do cliente por localização.'],
+            ['id' => 'retenção', 'title' => 'Clientes por Retenção', 'description' => 'Entenda o que retêm seu cliente após a primeira compra.'],
         ];
 
         foreach ($templates as $template) {
@@ -49,15 +49,14 @@
     $(document).ready(function () {
         let selectedTemplate;
 
-        // Consolidated function for navigation
         function goToStep(targetStep) {
-            // Hide all step contents
+            // Hide contents
             $('#step1-content, #step2-content, #step3-content').addClass('d-none');
 
-            // Show the target step content
+            // Show target content
             $(`#${targetStep}-content`).removeClass('d-none');
 
-            // Update navigation tabs
+            // Update tabs
             $('.nav-link').removeClass('active');
             $(`#tab-${targetStep}`).addClass('active').removeClass('disabled');
         }
@@ -65,16 +64,16 @@
         // Template selection
         $('.select-template').click(function () {
             selectedTemplate = $(this).data('template');
-            goToStep('step2'); // Move to Step 2
+            goToStep('step2');
             loadConfig(selectedTemplate);
         });
 
-        // Load dynamic Step 2 configuration
+
         function loadConfig(template) {
             const dynamicConfig = $('#dynamic-config');
             dynamicConfig.empty();
 
-            if (template === 'age') {
+            if (template === 'idade') {
                 dynamicConfig.append(`
                     <div class="form-group">
                         <label for="intervals">Intervalos de Faixa Etária:</label>
@@ -88,9 +87,9 @@
 
                 $('#add-interval').click(() => addIntervalRow());
                 $('#remove-interval').click(() => $('#intervals div:last-child').remove());
-            } else if (template === 'address') {
+            } else if (template === 'endereço') {
                 dynamicConfig.append('<p>Configuração de Segmentação por Bairro em desenvolvimento.</p>');
-            } else if (template === 'retention') {
+            } else if (template === 'retenção') {
                 dynamicConfig.append('<p>Configuração de Segmentação por Retenção em desenvolvimento.</p>');
             }
         }
@@ -143,6 +142,9 @@
             pageInput.name = 'page';
             pageInput.value = 'by_age_group';
             form.appendChild(pageInput);
+
+            console.log(form);
+            
 
             document.body.appendChild(form);
             form.submit();
