@@ -65,7 +65,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownRelatorios">
           <a class="dropdown-item" href="#">Dashboards</a>
-          <a class="dropdown-item" href="../controller/relatorios.php?page=builder">Relatório Clientes</a>
+          <a class="dropdown-item" href="../controller/relatorio.php?page=vendas">Vendas</a>
           <a class="dropdown-item" href="#">Relatório 2</a>
         </div>
       </li>

@@ -74,11 +74,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client F `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(5, 11, 0.00), -- Smartwatch A
-(6, 11, 10.00), -- Wireless Earbuds
-(11, 12, 50.00), -- Headphones
-(13, 13, 100.00), -- Monitor A
-(16, 13, 0.00); -- Gaming Mouse
+(5, 13, 0.00), -- Smartwatch A
+(6, 13, 10.00), -- Wireless Earbuds
+(11, 14, 50.00), -- Headphones
+(13, 15, 100.00), -- Monitor A
+(16, 15, 0.00); -- Gaming Mouse
 
 
 -- Client G `venda`
@@ -89,11 +89,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client G `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(18, 14, 0.00), -- T-shirt A
-(19, 14, 0.00), -- Jacket B
-(20, 15, 0.00), -- Socks Pack
-(14, 15, 25.00), -- Sports Shoes
-(15, 16, 0.00); -- Scarf A
+(18, 16, 0.00), -- T-shirt A
+(19, 16, 0.00), -- Jacket B
+(20, 17, 0.00), -- Socks Pack
+(14, 17, 25.00), -- Sports Shoes
+(15, 18, 0.00); -- Scarf A
 
 
 -- Client H `venda`
@@ -104,10 +104,10 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client H `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(17, 17, 0.00), -- Binder A
-(18, 17, 0.00), -- Calculator
-(20, 18, 0.00), -- Pen Pack
-(19, 19, 0.00); -- Notebook A
+(17, 19, 0.00), -- Binder A
+(18, 19, 0.00), -- Calculator
+(20, 20, 0.00), -- Pen Pack
+(19, 21, 0.00); -- Notebook A
 
 
 -- Client I `venda`
@@ -118,11 +118,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client I `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(1, 15, 0.00), -- Laptop A
-(5, 15, 200.00), -- Smartwatch A
-(9, 16, 100.00), -- Office Chair
-(13, 17, 0.00), -- Monitor A
-(16, 17, 0.00); -- Gaming Mouse
+(1, 22, 0.00), -- Laptop A
+(5, 22, 200.00), -- Smartwatch A
+(9, 23, 100.00), -- Office Chair
+(13, 24, 0.00), -- Monitor A
+(16, 24, 0.00); -- Gaming Mouse
 
 
 -- Client J `venda`
@@ -132,8 +132,8 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client J `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(18, 18, 0.00), -- Calculator
-(19, 18, 0.00); -- Notebook A
+(18, 25, 0.00), -- Calculator
+(19, 26, 0.00); -- Notebook A
 
 
 -- Client K `venda`
@@ -144,11 +144,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client K `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(1, 16, 100.00), -- Laptop A
-(5, 16, 0.00), -- Smartwatch A
-(9, 17, 50.00), -- Office Chair
-(12, 18, 150.00), -- Air Purifier
-(16, 18, 20.00); -- Gaming Mouse
+(1, 27, 100.00), -- Laptop A
+(5, 27, 0.00), -- Smartwatch A
+(9, 28, 50.00), -- Office Chair
+(12, 29, 150.00), -- Air Purifier
+(16, 29, 20.00); -- Gaming Mouse
 
 
 -- Client L `venda`
@@ -159,11 +159,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client L `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(14, 19, 0.00), -- Sports Shoes
-(19, 19, 0.00), -- Socks Pack
-(20, 20, 10.00), -- Skincare Lotion
-(13, 20, 0.00), -- Yoga Mat
-(15, 21, 0.00); -- Scarf A
+(14, 30, 0.00), -- Sports Shoes
+(19, 30, 0.00), -- Socks Pack
+(20, 31, 10.00), -- Skincare Lotion
+(13, 31, 0.00), -- Yoga Mat
+(15, 32, 0.00); -- Scarf A
 
 
 -- Client M `venda`
@@ -173,9 +173,9 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client M `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(14, 22, 0.00), -- T-shirt B
-(17, 22, 0.00), -- Binder A
-(19, 23, 0.00); -- Socks Pack
+(14, 33, 0.00), -- T-shirt B
+(17, 33, 0.00), -- Binder A
+(19, 34, 0.00); -- Socks Pack
 
 
 -- Client N `venda`
@@ -186,11 +186,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client N `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(6, 24, 0.00), -- Wireless Earbuds
-(7, 24, 0.00), -- Blender A
-(9, 25, 50.00), -- Office Chair
-(12, 26, 100.00), -- Air Purifier
-(16, 26, 0.00); -- Gaming Mouse
+(6, 35, 0.00), -- Wireless Earbuds
+(7, 35, 0.00), -- Blender A
+(9, 36, 50.00), -- Office Chair
+(12, 36, 100.00), -- Air Purifier
+(16, 37, 0.00); -- Gaming Mouse
 
 
 -- Client O `venda`
@@ -200,8 +200,8 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client O `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(17, 27, 0.00), -- Binder A
-(18, 27, 0.00); -- Calculator
+(17, 38, 0.00), -- Binder A
+(18, 39, 0.00); -- Calculator
 
 
 -- Client P `venda`
@@ -211,11 +211,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client P `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(3, 28, 50.00), -- Dumbbells
-(10, 28, 0.00), -- Treadmill
-(14, 29, 0.00), -- T-shirt B
-(15, 29, 0.00), -- Hoodie
-(16, 29, 20.00); -- Sports Watch
+(3, 40, 50.00), -- Dumbbells
+(10, 40, 0.00), -- Treadmill
+(14, 40, 0.00), -- T-shirt B
+(15, 41, 0.00), -- Hoodie
+(16, 41, 20.00); -- Sports Watch
 
 
 -- Client Q `venda`
@@ -225,11 +225,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client Q `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(1, 30, 50.00), -- Laptop A
-(5, 30, 100.00), -- Smartwatch A
-(9, 31, 0.00), -- Office Chair
-(12, 31, 50.00), -- Air Purifier
-(16, 31, 20.00); -- Gaming Mouse
+(1, 42, 50.00), -- Laptop A
+(5, 42, 100.00), -- Smartwatch A
+(9, 43, 0.00), -- Office Chair
+(12, 43, 50.00), -- Air Purifier
+(16, 43, 20.00); -- Gaming Mouse
 
 
 -- Client R `venda`
@@ -239,9 +239,9 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client R `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(14, 32, 0.00), -- T-shirt B
-(17, 32, 0.00), -- Binder A
-(19, 33, 0.00); -- Socks Pack
+(14, 44, 0.00), -- T-shirt B
+(17, 44, 0.00), -- Binder A
+(19, 45, 0.00); -- Socks Pack
 
 
 -- Client S `venda`
@@ -252,11 +252,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client S `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(6, 34, 0.00), -- Wireless Earbuds
-(7, 34, 0.00), -- Blender A
-(9, 34, 50.00), -- Office Chair
-(12, 35, 100.00), -- Air Purifier
-(16, 35, 0.00); -- Gaming Mouse
+(6, 46, 0.00), -- Wireless Earbuds
+(7, 46, 0.00), -- Blender A
+(9, 47, 50.00), -- Office Chair
+(12, 47, 100.00), -- Air Purifier
+(16, 48, 0.00); -- Gaming Mouse
 
 
 -- Client T `venda`
@@ -266,9 +266,9 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client T `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(18, 36, 0.00), -- Calculator
-(19, 36, 0.00), -- Socks Pack
-(20, 37, 10.00); -- Skincare Lotion
+(18, 49, 0.00), -- Calculator
+(19, 49, 0.00), -- Socks Pack
+(20, 50, 10.00); -- Skincare Lotion
 
 
 -- Client U `venda`
@@ -278,10 +278,10 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client U `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(7, 38, 0.00), -- Blender A
-(8, 38, 0.00), -- Coffee Maker
-(9, 39, 50.00), -- Office Chair
-(12, 39, 0.00); -- Air Purifier
+(7, 51, 0.00), -- Blender A
+(8, 51, 0.00), -- Coffee Maker
+(9, 52, 50.00), -- Office Chair
+(12, 52, 0.00); -- Air Purifier
 
 
 -- Client V `venda`
@@ -291,10 +291,10 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client V `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(14, 40, 0.00), -- T-shirt B
-(15, 40, 0.00), -- Hoodie
-(17, 41, 0.00), -- Binder A
-(20, 41, 20.00); -- Skincare Lotion
+(14, 53, 0.00), -- T-shirt B
+(15, 53, 0.00), -- Hoodie
+(17, 54, 0.00), -- Binder A
+(20, 54, 20.00); -- Skincare Lotion
 
 
 -- Client W `venda`
@@ -304,11 +304,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client W `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(1, 42, 50.00), -- Laptop A
-(5, 42, 100.00), -- Smartwatch A
-(10, 43, 0.00), -- Treadmill
-(14, 43, 0.00), -- T-shirt B
-(16, 43, 20.00); -- Sports Watch
+(1, 55, 50.00), -- Laptop A
+(5, 55, 100.00), -- Smartwatch A
+(10, 55, 0.00), -- Treadmill
+(14, 56, 0.00), -- T-shirt B
+(16, 56, 20.00); -- Sports Watch
 
 
 -- Client X `venda`
@@ -319,11 +319,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client X `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(6, 44, 0.00), -- Wireless Earbuds
-(7, 44, 0.00), -- Blender A
-(8, 44, 100.00), -- Coffee Maker
-(9, 45, 50.00), -- Office Chair
-(12, 45, 0.00); -- Air Purifier
+(6, 57, 0.00), -- Wireless Earbuds
+(7, 58, 0.00), -- Blender A
+(8, 59, 100.00), -- Coffee Maker
+(9, 59, 50.00), -- Office Chair
+(12, 59, 0.00); -- Air Purifier
 
 
 -- Client Y `venda`
@@ -333,11 +333,11 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client Y `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(20, 46, 0.00), -- Skincare Lotion
-(17, 46, 0.00), -- Binder A
-(18, 47, 10.00), -- Calculator
-(19, 47, 0.00), -- Socks Pack
-(5, 47, 20.00); -- Smartwatch A
+(20, 60, 0.00), -- Skincare Lotion
+(17, 60, 0.00), -- Binder A
+(18, 60, 10.00), -- Calculator
+(19, 61, 0.00), -- Socks Pack
+(5, 61, 20.00); -- Smartwatch A
 
 
 -- Client Z `venda`
@@ -348,8 +348,8 @@ INSERT INTO `venda` (`id_cliente`, `id_funcionario`, `id_pagamento`, `valor`, `d
 
 -- Client Z `itens_venda`
 INSERT INTO `itens_venda` (`id_produto`, `id_venda`, `desconto_item`) VALUES
-(1, 48, 50.00), -- Laptop A
-(5, 48, 30.00), -- Smartwatch A
-(7, 48, 100.00), -- Blender A
-(9, 49, 0.00), -- Office Chair
-(12, 49, 50.00); -- Air Purifier
+(1, 62, 50.00), -- Laptop A
+(5, 62, 30.00), -- Smartwatch A
+(7, 63, 100.00), -- Blender A
+(9, 63, 0.00), -- Office Chair
+(12, 64, 50.00); -- Air Purifier

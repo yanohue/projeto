@@ -70,10 +70,35 @@ INSERT INTO `cliente` (`cpf`, `nome`, `telefone`, `score`, `data_nascimento`, `l
 ('26262626262', 'Client Z', '55912345026', 780, '1994-02-20', 6500.00, 'client.z@example.com', 1, 0, 1);
 
 
--- Insert into `endereco`
+-- Insert into `endereco` para os clientes A-Z
 INSERT INTO `endereco` (`cliente_id_cliente`, `fornecedor_id_fornecedor`, `uf`, `cidade`, `logradouro`, `bairro`, `numero`, `cep`, `complemento`) VALUES
 (1, NULL, 'SP', 'São Paulo', 'Rua A', 'Centro', '123', '01010101', 'Apt 101'),
-(NULL, 1, 'RJ', 'Rio de Janeiro', 'Avenida B', 'Zona Sul', '456', '22022022', NULL);
+(2, NULL, 'RJ', 'Rio de Janeiro', 'Avenida B', 'Zona Sul', '456', '22022022', NULL),
+(3, NULL, 'MG', 'Belo Horizonte', 'Rua C', 'Savassi', '789', '30303030', 'Bloco 2'),
+(4, NULL, 'RS', 'Porto Alegre', 'Rua D', 'Centro Histórico', '101', '40404040', 'Apartamento 202'),
+(5, NULL, 'BA', 'Salvador', 'Rua E', 'Pelourinho', '202', '50505050', 'Casa 5'),
+(6, NULL, 'SP', 'São Paulo', 'Avenida F', 'Vila Madalena', '303', '60606060', NULL),
+(7, NULL, 'CE', 'Fortaleza', 'Rua G', 'Meireles', '404', '70707070', 'Andar 3'),
+(8, NULL, 'PE', 'Recife', 'Rua H', 'Boa Viagem', '505', '80808080', 'Bloco A'),
+(9, NULL, 'GO', 'Goiânia', 'Avenida I', 'Setor Bueno', '606', '90909090', NULL),
+(10, NULL, 'PR', 'Curitiba', 'Rua J', 'Centro', '707', '10101010', 'Sala 2'),
+(11, NULL, 'SP', 'São Paulo', 'Rua K', 'Vila Mariana', '808', '11111111', 'Apt 301'),
+(12, NULL, 'ES', 'Vitória', 'Avenida L', 'Praia do Canto', '909', '12121212', 'Casa 10'),
+(13, NULL, 'DF', 'Brasília', 'Rua M', 'Asa Sul', '1010', '13131313', NULL),
+(14, NULL, 'MG', 'Belo Horizonte', 'Rua N', 'Funcionários', '1111', '14141414', 'Andar 5'),
+(15, NULL, 'SP', 'São Paulo', 'Avenida O', 'Jardim Paulista', '1212', '15151515', 'Cobertura 2'),
+(16, NULL, 'SC', 'Florianópolis', 'Rua P', 'Centro', '1313', '16161616', 'Sala Comercial'),
+(17, NULL, 'PR', 'Curitiba', 'Rua Q', 'Batel', '1414', '17171717', 'Apt 1003'),
+(18, NULL, 'BA', 'Salvador', 'Avenida R', 'Pituba', '1515', '18181818', 'Bloco B'),
+(19, NULL, 'RJ', 'Rio de Janeiro', 'Rua S', 'Ipanema', '1616', '19191919', NULL),
+(20, NULL, 'SP', 'São Paulo', 'Rua T', 'Vila Progredior', '1717', '20202020', 'Apt 502'),
+(21, NULL, 'AL', 'Maceió', 'Rua U', 'Ponta Verde', '1818', '21212121', 'Casa 12'),
+(22, NULL, 'MG', 'Uberlândia', 'Rua V', 'Centro', '1919', '22222222', 'Cobertura 3'),
+(23, NULL, 'SP', 'São Paulo', 'Rua W', 'Itaim Bibi', '2020', '23232323', 'Apartamento 204'),
+(24, NULL, 'RS', 'Porto Alegre', 'Rua X', 'Moinhos de Vento', '2121', '24242424', 'Apartamento 101'),
+(25, NULL, 'CE', 'Fortaleza', 'Avenida Y', 'Centro', '2222', '25252525', NULL),
+(26, NULL, 'SP', 'São Paulo', 'Rua Z', 'Bela Vista', '2323', '26262626', 'Apartamento 707');
+
 
 -- Insert into `funcionario`
 INSERT INTO `funcionario` (`nome`, `email`, `salario`, `meta`, `cargo`, `comissao`) VALUES
