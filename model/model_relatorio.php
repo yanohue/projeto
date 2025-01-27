@@ -1,19 +1,24 @@
 <?php
 
-function getTicketMedioPorCliente($conexao) {
+function getTicketMedioPorCliente($conexao, $limite = 10, $offset = 0, $periodo = null) {
     $sql = "SELECT 
         c.nome, 
         AVG(v.valor) AS ticket_medio, 
         COUNT(DISTINCT(v.id_venda)) AS quantidade_compras,
         p.categoria AS categoria_mais_comprada
     FROM cliente c
-    JOIN venda v ON c.id_cliente = v.id_cliente
+    LEFT JOIN venda v ON c.id_cliente = v.id_cliente
     JOIN itens_venda iv ON v.id_venda = iv.id_venda
     JOIN produto p ON iv.id_produto = p.id_produto
+    WHERE v.data >= ?
     GROUP BY c.id_cliente
-    ORDER BY ticket_medio DESC";
+    ORDER BY ticket_medio DESC
+    LIMIT ? OFFSET ?";
+
+    $dataInicio = getDataInicioPorPeriodo($periodo);
 
     $stmt = $conexao->prepare($sql);
+    $stmt->bind_param('sii', $dataInicio, $limite, $offset);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -25,7 +30,7 @@ function getTicketMedioPorCliente($conexao) {
     return $dados;
 }
 
-function getClientesComMaiorPotencial($conexao) {
+function getClientesComMaiorPotencial($conexao, $limite = 10, $offset = 0) {
     $sql = "SELECT 
         c.nome, 
         c.limite_credito, 
@@ -40,12 +45,14 @@ function getClientesComMaiorPotencial($conexao) {
         END AS canal_comunicacao
     FROM cliente c
     JOIN endereco e ON c.id_cliente = e.cliente_id_cliente
-    JOIN venda v ON c.id_cliente = v.id_cliente
+    LEFT JOIN venda v ON c.id_cliente = v.id_cliente
     WHERE c.score >= 600
     GROUP BY c.id_cliente
-    ORDER BY c.limite_credito DESC";
+    ORDER BY c.limite_credito DESC
+    LIMIT ? OFFSET ?";
 
     $stmt = $conexao->prepare($sql);
+    $stmt->bind_param('ii', $limite, $offset);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -57,7 +64,7 @@ function getClientesComMaiorPotencial($conexao) {
     return $dados;
 }
 
-function getProdutosMaisVendidos($conexao) {
+function getProdutosMaisVendidos($conexao, $limite = 10, $offset = 0) {
     $sql = "SELECT 
         p.nome, 
        COUNT(iv.id_produto) AS quantidade_vendida, 
@@ -65,11 +72,13 @@ function getProdutosMaisVendidos($conexao) {
        AVG(iv.desconto_item) AS desconto_medio,
        p.quantidade_estoque
     FROM produto p
-    JOIN itens_venda iv ON p.id_produto = iv.id_produto
+    LEFT JOIN itens_venda iv ON p.id_produto = iv.id_produto
     GROUP BY p.id_produto
-    ORDER BY quantidade_vendida DESC";
+    ORDER BY quantidade_vendida DESC
+    LIMIT ? OFFSET ?";
 
     $stmt = $conexao->prepare($sql);
+    $stmt->bind_param('ii', $limite, $offset);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -81,19 +90,21 @@ function getProdutosMaisVendidos($conexao) {
     return $dados;
 }
 
-function getClientesQueMaisCompraram($conexao) {
+function getClientesQueMaisCompraram($conexao, $limite = 10, $offset = 0) {
     $sql = "SELECT 
         c.nome, 
         SUM(v.valor) AS total_compras,
         p.nome AS produto_mais_comprado
     FROM cliente c
-    JOIN venda v ON c.id_cliente = v.id_cliente
+    LEFT JOIN venda v ON c.id_cliente = v.id_cliente
     JOIN itens_venda iv ON v.id_venda = iv.id_venda
     JOIN produto p ON iv.id_produto = p.id_produto
     GROUP BY c.id_cliente
-    ORDER BY total_compras DESC";
+    ORDER BY total_compras DESC
+    LIMIT ? OFFSET ?";
 
     $stmt = $conexao->prepare($sql);
+    $stmt->bind_param('ii', $limite, $offset);
     $stmt->execute();
     $result = $stmt->get_result();
 

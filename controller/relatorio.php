@@ -9,22 +9,58 @@ switch (@$_REQUEST["page"]) {
         break;
 
     case "ticket_medio":
-        $dados = getTicketMedioPorCliente($conexao);
-        include ("../view/relatorio/ticket_medio.php");
+        include("../view/relatorio/filtro_relatorio.php");
+
+        if (isset($_GET['periodo'])) {
+            $periodo = $_GET['periodo'];
+
+            $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+            $limite = 10; // quantidade máxima de registros por página 
+            $offset = ($pagina - 1) * $limite;
+
+            $totalRegistros = getTotalClientes($conexao);
+            $totalPaginas = ceil($totalRegistros / $limite);
+
+            $dados = getTicketMedioPorCliente($conexao, $limite, $offset, $periodo);
+            include ("../view/relatorio/ticket_medio.php");
+        }
         break;
 
     case "clientes_potencial_compras":
-        $dados = getClientesComMaiorPotencial($conexao);
+        $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+        $limite = 10;
+        $offset = ($pagina - 1) * $limite;
+
+        $totalRegistros = getTotalClientes($conexao);
+        $totalPaginas = ceil($totalRegistros / $limite); 
+
+        $dados = getClientesComMaiorPotencial($conexao, $limite, $offset);
+
         include ("../view/relatorio/clientes_potencial_compras.php");
         break;
     
     case "clientes_mais_compras":
-        $dados = getClientesQueMaisCompraram($conexao);
+        $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+        $limite = 10;
+        $offset = ($pagina - 1) * $limite;
+
+        $totalRegistros = getTotalClientes($conexao);
+        $totalPaginas = ceil($totalRegistros / $limite);
+
+        $dados = getClientesQueMaisCompraram($conexao, $limite, $offset);
+
         include ("../view/relatorio/clientes_mais_compras.php");
         break;
 
     case "produtos_mais_compras":
-        $dados = getProdutosMaisVendidos($conexao);
+        $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+        $limite = 10;
+        $offset = ($pagina - 1) * $limite;
+
+        $totalRegistros = getTotalProdutos($conexao);
+        $totalPaginas = ceil($totalRegistros / $limite);
+        
+        $dados = getProdutosMaisVendidos($conexao, $limite, $offset);
         include ("../view/relatorio/produtos_mais_compras.php");
         break;
 
