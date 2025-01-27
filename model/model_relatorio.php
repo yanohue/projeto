@@ -116,4 +116,44 @@ function getClientesQueMaisCompraram($conexao, $limite = 10, $offset = 0) {
     return $dados;
 }
 
+function getTotalClientes($conexao) {
+    $sql = "SELECT COUNT(DISTINCT c.id_cliente) AS total FROM cliente c";
+
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    return $result->fetch_assoc()['total'];
+}
+
+function getTotalProdutos($conexao) {
+    $sql = "SELECT COUNT(DISTINCT p.id_produto) AS total FROM produto p";
+
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    return $result->fetch_assoc()['total'];
+}
+
+function getDataInicioPorPeriodo($periodo) {
+    $hoje = date('Y-m-d');
+    switch ($periodo) {
+        case 'hoje':
+            return $hoje;
+        case 'ultima_semana':
+            return date('Y-m-d', strtotime('-1 week', strtotime($hoje)));
+        case 'ultimo_mes':
+            return date('Y-m-d', strtotime('-1 month', strtotime($hoje)));
+        case 'ultimos_3_meses':
+            return date('Y-m-d', strtotime('-3 months', strtotime($hoje)));
+        case 'ultimos_6_meses':
+            return date('Y-m-d', strtotime('-6 months', strtotime($hoje)));
+        case 'ultimo_ano':
+            return date('Y-m-d', strtotime('-1 year', strtotime($hoje)));
+        default:
+            return $hoje;
+    }
+}
+
 ?>
