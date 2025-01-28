@@ -43,6 +43,20 @@
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center">
+        <div class="col p-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Ticket Médio por Bairro</h5>
+                        <p class="card-text">Calcular o ticket médio das compras por bairro.</p>
+                        <a href="../controller/relatorio.php?page=ticket_medio_bairro" class="btn btn-primary mt-auto mx-5">Visualizar</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
 </div>
 
 

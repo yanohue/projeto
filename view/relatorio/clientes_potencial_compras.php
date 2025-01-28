@@ -1,7 +1,7 @@
-<div class="container mt-5">
+<div class="container mt-2">
 
-    <h1 class="text-center mb-4">Relatório: Clientes com Maior Potencial</h1>
-    
+    <h5 class="text-center mb-4">Desde <?= htmlspecialchars($periodo . " - " . date('d/m/Y', strtotime($dataInicio))) ?> </h5>
+
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
@@ -19,12 +19,12 @@
                 $dado = $dados[$i] ?? null; 
             ?>
                 <tr>
-                    <td><?= $dado ? $dado['nome']                                               : '&nbsp;' ?></td>
-                    <td><?= $dado ? 'R$ ' . number_format($dado['limite_credito'], 2, ',', '.') : '&nbsp;' ?></td>
-                    <td><?= $dado ? $dado['score']                                              : '&nbsp;' ?></td>
-                    <td><?= $dado ? $dado['cidade']                                             : '&nbsp;' ?></td>
-                    <td><?= $dado ? $dado['quantidade_compras']                                 : '&nbsp;' ?></td>
-                    <td><?= $dado ? $dado['canal_comunicacao']                                  : '&nbsp;' ?></td>
+                    <td class="p-2"><?= $dado ? $dado['nome']                                               : '&nbsp;' ?></td>
+                    <td class="p-2"><?= $dado ? 'R$ ' . number_format($dado['limite_credito'], 2, ',', '.') : '&nbsp;' ?></td>
+                    <td class="p-2"><?= $dado ? $dado['score']                                              : '&nbsp;' ?></td>
+                    <td class="p-2"><?= $dado ? $dado['cidade']                                             : '&nbsp;' ?></td>
+                    <td class="p-2"><?= $dado ? $dado['quantidade_compras']                                 : '&nbsp;' ?></td>
+                    <td class="p-2"><?= $dado ? $dado['canal_comunicacao']                                  : '&nbsp;' ?></td>
                 </tr>
             <?php endfor; ?>
         </tbody>
@@ -36,7 +36,7 @@
                 <ul class="pagination justify-content-center">
                     <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
                         <li class="page-item <?= $i == $pagina ? 'active' : '' ?>">
-                            <a class="page-link" href="?page=clientes_potencial_compras&pagina=<?= $i ?>"><?= $i ?></a>
+                            <a class="page-link" href="?page=clientes_potencial_compras&periodo=<?= htmlspecialchars($periodo) ?>&pagina=<?= $i ?>"><?= $i ?></a>
                         </li>
                     <?php endfor; ?>
                 </ul>

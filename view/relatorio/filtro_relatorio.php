@@ -1,13 +1,13 @@
-<div class="container mt-5 col-3">
+<div class="container mt-3 col-3">
 
     <form method="GET" action="">
         <div class="card mb-3">
-            <div class="card-header">
+            <div class="card-header p-2">
                 Filtros de Relatório
             </div>
-            <div class="card-body">
+            <div class="card-body p-2 justify-content-center">
                 <div class="form-group">
-                    <input type="hidden" name="page" value="ticket_medio">
+                    <input type="hidden" name="page" value="<?= htmlspecialchars($type_relatorio) ?>">
                     <label for="periodo">Período</label>
                     <select name="periodo" id="periodo" class="form-control">
                         <option value="hoje">Hoje</option>

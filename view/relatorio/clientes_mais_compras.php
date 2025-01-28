@@ -1,6 +1,6 @@
-<div class="container mt-5">
+<div class="container mt-2">
 
-    <h1 class="text-center mb-4">Relatório: Clientes que Mais Compraram</h1>
+    <h5 class="text-center mb-4">Desde <?= htmlspecialchars($periodo . " - " . date('d/m/Y', strtotime($dataInicio))) ?> </h5>
     
     <table class="table table-bordered table-striped">
         <thead>
@@ -16,9 +16,9 @@
             $dado = $dados[$i] ?? null;
         ?>
             <tr>
-                <td><?= $dado ? $dado['nome']                                               : '&nbsp;' ?></td>
-                <td><?= $dado ? 'R$ ' . number_format($dado['total_compras'], 2, ',', '.')  : '&nbsp;' ?></td>
-                <td><?= $dado ? $dado['produto_mais_comprado']                              : '&nbsp;' ?></td>
+                <td class="p-2"><?= $dado ? $dado['nome']                                               : '&nbsp;' ?></td>
+                <td class="p-2"><?= $dado ? 'R$ ' . number_format($dado['total_compras'], 2, ',', '.')  : '&nbsp;' ?></td>
+                <td class="p-2"><?= $dado ? $dado['produto_mais_comprado']                              : '&nbsp;' ?></td>
             </tr>
         <?php endfor; ?>
         </tbody>
@@ -30,7 +30,7 @@
                 <ul class="pagination justify-content-center">
                     <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
                         <li class="page-item <?= $i == $pagina ? 'active' : '' ?>">
-                            <a class="page-link" href="?page=clientes_mais_compras&pagina=<?= $i ?>"><?= $i ?></a>
+                            <a class="page-link" href="?page=clientes_mais_compras&periodo=<?= htmlspecialchars($periodo) ?>&pagina=<?= $i ?>"><?= $i ?></a>
                         </li>
                     <?php endfor; ?>
                 </ul>
